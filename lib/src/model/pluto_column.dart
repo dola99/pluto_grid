@@ -24,6 +24,7 @@ class PlutoColumn {
   /// A title to be displayed on the screen.
   /// If a titleSpan value is set, the title value is not displayed.
   String title;
+  Widget? titleWidget;
 
   /// Specifies the field name of the row to be connected to the column.
   String field;
@@ -197,6 +198,7 @@ class PlutoColumn {
     required this.field,
     required this.type,
     this.readOnly = false,
+    this.titleWidget,
     PlutoColumnCheckReadOnly? checkReadOnly,
     this.width = PlutoGridSettings.columnWidth,
     this.minWidth = PlutoGridSettings.minColumnWidth,
