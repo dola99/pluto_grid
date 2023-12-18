@@ -63,7 +63,10 @@ class PlutoColumnMenuDelegateDefault
         break;
       case PlutoGridColumnMenuItem.setFilter:
         if (!mounted) return;
-        stateManager.showFilterPopup(context, calledColumn: column);
+        stateManager.showFilterPopup(
+          context,
+          calledColumn: column,
+        );
         break;
       case PlutoGridColumnMenuItem.resetFilter:
         stateManager.setFilter(null);
@@ -153,7 +156,7 @@ List<PopupMenuEntry<PlutoGridColumnMenuItem>> _getDefaultColumnMenuItems({
     //     textColor: textColor,
     //   ),
     if (column.enableFilterMenuItem == true) ...[
-      const PopupMenuDivider(),
+      // const PopupMenuDivider(),
       _buildMenuItem(
         value: PlutoGridColumnMenuItem.setFilter,
         text: localeText.setFilter,

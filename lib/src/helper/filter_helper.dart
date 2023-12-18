@@ -538,7 +538,7 @@ class PlutoGridFilterPopupHeader extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: SizedBox(
-        width: MediaQuery.sizeOf(context).width,
+        width: 600,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -564,7 +564,7 @@ class PlutoGridFilterPopupHeader extends StatelessWidget {
                 ),
               ],
             ),
-            const CloseButton(),
+            const CloseButton(color: Colors.red),
           ],
         ),
       ),
