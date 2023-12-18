@@ -564,7 +564,7 @@ class PlutoGridFilterPopupHeader extends StatelessWidget {
                 ),
               ],
             ),
-            const CloseButton(color: Colors.red),
+            const CloseButton(color: Colors.black),
           ],
         ),
       ),
