@@ -537,41 +537,36 @@ class PlutoGridFilterPopupHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              IconButton(
-                icon: const Icon(Icons.add),
-                color: configuration!.style.iconColor,
-                iconSize: configuration!.style.iconSize,
-                onPressed: handleAddButton,
-              ),
-              IconButton(
-                icon: const Icon(Icons.remove),
-                color: configuration!.style.iconColor,
-                iconSize: configuration!.style.iconSize,
-                onPressed: handleRemoveButton,
-              ),
-              IconButton(
-                icon: const Icon(Icons.clear_sharp),
-                color: Colors.red,
-                iconSize: configuration!.style.iconSize,
-                onPressed: handleClearButton,
-              ),
-            ],
-          ),
-          TextButton(
-            onPressed: onClosed,
-            child: const Text(
-              'Close',
-              style: TextStyle(
-                color: Colors.red,
-              ),
+      child: SizedBox(
+        width: MediaQuery.sizeOf(context).width,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.add),
+                  color: configuration!.style.iconColor,
+                  iconSize: configuration!.style.iconSize,
+                  onPressed: handleAddButton,
+                ),
+                IconButton(
+                  icon: const Icon(Icons.remove),
+                  color: configuration!.style.iconColor,
+                  iconSize: configuration!.style.iconSize,
+                  onPressed: handleRemoveButton,
+                ),
+                IconButton(
+                  icon: const Icon(Icons.clear_sharp),
+                  color: Colors.red,
+                  iconSize: configuration!.style.iconSize,
+                  onPressed: handleClearButton,
+                ),
+              ],
             ),
-          ),
-        ],
+            const CloseButton(),
+          ],
+        ),
       ),
     );
   }

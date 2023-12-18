@@ -113,45 +113,45 @@ List<PopupMenuEntry<PlutoGridColumnMenuItem>> _getDefaultColumnMenuItems({
   final localeText = stateManager.localeText;
 
   return [
-    if (column.frozen.isFrozen == true)
-      _buildMenuItem(
-        value: PlutoGridColumnMenuItem.unfreeze,
-        text: localeText.unfreezeColumn,
-        textColor: textColor,
-      ),
-    if (column.frozen.isFrozen != true) ...[
-      _buildMenuItem(
-        value: PlutoGridColumnMenuItem.freezeToStart,
-        enabled: enoughFrozenColumnsWidth,
-        text: localeText.freezeColumnToStart,
-        textColor: enoughFrozenColumnsWidth ? textColor : disableTextColor,
-      ),
-      _buildMenuItem(
-        value: PlutoGridColumnMenuItem.freezeToEnd,
-        enabled: enoughFrozenColumnsWidth,
-        text: localeText.freezeColumnToEnd,
-        textColor: enoughFrozenColumnsWidth ? textColor : disableTextColor,
-      ),
-    ],
-    const PopupMenuDivider(),
-    _buildMenuItem(
-      value: PlutoGridColumnMenuItem.autoFit,
-      text: localeText.autoFitColumn,
-      textColor: textColor,
-    ),
-    if (column.enableHideColumnMenuItem == true)
-      _buildMenuItem(
-        value: PlutoGridColumnMenuItem.hideColumn,
-        text: localeText.hideColumn,
-        textColor: textColor,
-        enabled: stateManager.refColumns.length > 1,
-      ),
-    if (column.enableSetColumnsMenuItem == true)
-      _buildMenuItem(
-        value: PlutoGridColumnMenuItem.setColumns,
-        text: localeText.setColumns,
-        textColor: textColor,
-      ),
+    // if (column.frozen.isFrozen == true)
+    //   _buildMenuItem(
+    //     value: PlutoGridColumnMenuItem.unfreeze,
+    //     text: localeText.unfreezeColumn,
+    //     textColor: textColor,
+    //   ),
+    // if (column.frozen.isFrozen != true) ...[
+    //   _buildMenuItem(
+    //     value: PlutoGridColumnMenuItem.freezeToStart,
+    //     enabled: enoughFrozenColumnsWidth,
+    //     text: localeText.freezeColumnToStart,
+    //     textColor: enoughFrozenColumnsWidth ? textColor : disableTextColor,
+    //   ),
+    //   _buildMenuItem(
+    //     value: PlutoGridColumnMenuItem.freezeToEnd,
+    //     enabled: enoughFrozenColumnsWidth,
+    //     text: localeText.freezeColumnToEnd,
+    //     textColor: enoughFrozenColumnsWidth ? textColor : disableTextColor,
+    //   ),
+    // ],
+    // const PopupMenuDivider(),
+    // _buildMenuItem(
+    //   value: PlutoGridColumnMenuItem.autoFit,
+    //   text: localeText.autoFitColumn,
+    //   textColor: textColor,
+    // ),
+    // if (column.enableHideColumnMenuItem == true)
+    //   _buildMenuItem(
+    //     value: PlutoGridColumnMenuItem.hideColumn,
+    //     text: localeText.hideColumn,
+    //     textColor: textColor,
+    //     enabled: stateManager.refColumns.length > 1,
+    //   ),
+    // if (column.enableSetColumnsMenuItem == true)
+    //   _buildMenuItem(
+    //     value: PlutoGridColumnMenuItem.setColumns,
+    //     text: localeText.setColumns,
+    //     textColor: textColor,
+    //   ),
     if (column.enableFilterMenuItem == true) ...[
       const PopupMenuDivider(),
       _buildMenuItem(
