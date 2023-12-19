@@ -27,23 +27,23 @@ class PlutoChangeNotifierFilter<T> {
   }
 
   void printNotifierOnFilter(PlutoNotifierEvent event) {
-    if (_ignoreDebugPrint()) return;
+    // if (_ignoreDebugPrint()) return;
 
     final length = event.notifier.length;
 
-    debugPrint('[$_type] called on $length notifier.');
+    print('[$_type] called on $length notifier.');
     for (int i = 0; i < length; i += 1) {
       final bool isLast = length - 1 == i;
       final prefix = isLast ? '\u2514' : '\u251c';
       final notifier = event.notifier.elementAt(i);
-      debugPrint('  $prefix ${_debugNotifierNames?[notifier]}');
+      print('  $prefix ${_debugNotifierNames?[notifier]}');
     }
   }
 
   void printNotifierOnChange(PlutoNotifierEvent event, bool rebuild) {
     if (_ignoreDebugPrint()) return;
 
-    debugPrint('    ON_CHANGE - REBUILD : ${rebuild.toString().toUpperCase()}');
+    print('    ON_CHANGE - REBUILD : ${rebuild.toString().toUpperCase()}');
   }
 
   bool _ignoreDebugPrint() {
