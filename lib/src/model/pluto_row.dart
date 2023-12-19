@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 
-class PlutoRow {
+class PlutoRow<T> {
   PlutoRow({
     required this.cells,
     PlutoRowType? type,
+    this.referanceObject,
     this.sortIdx = 0,
     bool checked = false,
     Key? key,
@@ -24,6 +25,8 @@ class PlutoRow {
   int sortIdx;
 
   bool? _checked;
+
+  T? referanceObject;
 
   PlutoRow? _parent;
 
