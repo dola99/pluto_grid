@@ -73,6 +73,7 @@ class PlutoGridStateChangeNotifier extends PlutoChangeNotifier
     this.onChanged,
     this.onSelected,
     this.onSorted,
+    this.onFilterd,
     this.onRowChecked,
     this.onRowDoubleTap,
     this.onRowSecondaryTap,
@@ -123,6 +124,8 @@ class PlutoGridStateChangeNotifier extends PlutoChangeNotifier
 
   @override
   final PlutoOnSortedEventCallback? onSorted;
+
+  final PlutoOnFilterdEventCallback? onFilterd;
 
   @override
   final PlutoOnRowCheckedEventCallback? onRowChecked;

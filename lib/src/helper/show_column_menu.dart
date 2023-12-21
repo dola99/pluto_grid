@@ -137,11 +137,11 @@ List<PopupMenuEntry<PlutoGridColumnMenuItem>> _getDefaultColumnMenuItems({
     //   ),
     // ],
     // const PopupMenuDivider(),
-    // _buildMenuItem(
-    //   value: PlutoGridColumnMenuItem.autoFit,
-    //   text: localeText.autoFitColumn,
-    //   textColor: textColor,
-    // ),
+    _buildMenuItem(
+      value: PlutoGridColumnMenuItem.autoFit,
+      text: localeText.autoFitColumn,
+      textColor: textColor,
+    ),
     // if (column.enableHideColumnMenuItem == true)
     //   _buildMenuItem(
     //     value: PlutoGridColumnMenuItem.hideColumn,
@@ -156,7 +156,7 @@ List<PopupMenuEntry<PlutoGridColumnMenuItem>> _getDefaultColumnMenuItems({
     //     textColor: textColor,
     //   ),
     if (column.enableFilterMenuItem == true) ...[
-      // const PopupMenuDivider(),
+      const PopupMenuDivider(),
       _buildMenuItem(
         value: PlutoGridColumnMenuItem.setFilter,
         text: localeText.setFilter,

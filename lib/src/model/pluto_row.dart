@@ -6,6 +6,7 @@ class PlutoRow<T> {
     required this.cells,
     PlutoRowType? type,
     this.referanceObject,
+    this.widgetCells,
     this.sortIdx = 0,
     bool checked = false,
     Key? key,
@@ -19,6 +20,7 @@ class PlutoRow<T> {
   final Key _key;
 
   Map<String, PlutoCell> cells;
+  Map<dynamic, PlutoCell>? widgetCells;
 
   /// Value to maintain the default sort order when sorting columns.
   /// If there is no value, it is automatically set when loading the grid.

@@ -4,6 +4,7 @@ import 'package:pluto_grid/pluto_grid.dart';
 class PlutoCell {
   PlutoCell({
     dynamic value,
+    this.widgetValue,
     Key? key,
   })  : _key = key ?? UniqueKey(),
         _value = value;
@@ -11,7 +12,7 @@ class PlutoCell {
   final Key _key;
 
   dynamic _value;
-
+  Widget? widgetValue;
   dynamic _valueForSorting;
 
   /// Set initial value according to [PlutoColumn] setting.

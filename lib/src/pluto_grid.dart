@@ -21,6 +21,9 @@ typedef PlutoOnSelectedEventCallback = void Function(
 typedef PlutoOnSortedEventCallback = void Function(
     PlutoGridOnSortedEvent event);
 
+typedef PlutoOnFilterdEventCallback = void Function(
+    PlutoGridFilterdEvent event);
+
 typedef PlutoOnRowCheckedEventCallback = void Function(
     PlutoGridOnRowCheckedEvent event);
 
@@ -63,6 +66,7 @@ class PlutoGrid extends PlutoStatefulWidget {
     this.onChanged,
     this.onSelected,
     this.onSorted,
+    this.onFilterd,
     this.onRowChecked,
     this.onRowDoubleTap,
     this.onRowSecondaryTap,
@@ -169,6 +173,8 @@ class PlutoGrid extends PlutoStatefulWidget {
   /// [onSorted] is a callback that is called when column sorting is changed.
   /// {@endtemplate}
   final PlutoOnSortedEventCallback? onSorted;
+
+  final PlutoOnFilterdEventCallback? onFilterd;
 
   /// {@template pluto_grid_property_onRowChecked}
   /// [onRowChecked] can receive the check status change of the checkbox
@@ -1325,6 +1331,22 @@ class PlutoGridOnSortedEvent {
   final PlutoColumnSort oldSort;
 
   const PlutoGridOnSortedEvent({
+    required this.column,
+    required this.oldSort,
+  });
+
+  @override
+  String toString() {
+    return '[PlutoGridOnSortedEvent] ${column.title} (changed: ${column.sort}, old: $oldSort)';
+  }
+}
+
+class PlutoGridFilterdEvent {
+  final PlutoColumn column;
+
+  final PlutoColumnSort oldSort;
+
+  const PlutoGridFilterdEvent({
     required this.column,
     required this.oldSort,
   });

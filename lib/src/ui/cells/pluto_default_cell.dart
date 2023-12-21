@@ -465,14 +465,16 @@ class _DefaultCellWidget extends StatelessWidget {
       ));
     }
 
-    return Text(
-      _text,
-      style: stateManager.configuration.style.cellTextStyle.copyWith(
-        decoration: TextDecoration.none,
-        fontWeight: FontWeight.normal,
-      ),
-      overflow: TextOverflow.ellipsis,
-      textAlign: column.textAlign.value,
-    );
+    return cell.widgetValue == null
+        ? Text(
+            _text,
+            style: stateManager.configuration.style.cellTextStyle.copyWith(
+              decoration: TextDecoration.none,
+              fontWeight: FontWeight.normal,
+            ),
+            overflow: TextOverflow.ellipsis,
+            textAlign: column.textAlign.value,
+          )
+        : cell.widgetValue!;
   }
 }
